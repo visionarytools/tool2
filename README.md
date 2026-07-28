@@ -1,1 +1,1 @@
-Advanved
+Advanced
