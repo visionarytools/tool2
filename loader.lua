@@ -1,4 +1,4 @@
-local Prepass = loadstring(game:HttpGet("https://raw.githubusercontent.com/visionarytools/tool1/refs/heads/main/source/prepass.lua", true))()
+local Prepass = loadstring(game:HttpGet("https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/prepass.lua", true))()
 
 local Options = {
     ReadMe = true, -- false
