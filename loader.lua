@@ -24,7 +24,7 @@ local PrepassOptions = {
     Verbose           = false, -- true
     SkipPrepass       = false,
     SkipSaveInstance  = false,
-    UssiRepoURL       = "https://raw.githubusercontent.com/visionarytools/tool1/refs/heads/main/source/",
+    UssiRepoURL       = "https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/",
     UssiScript        = "source",
 }
 
