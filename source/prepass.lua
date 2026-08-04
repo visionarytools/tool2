@@ -349,8 +349,8 @@ return function(Options, PrepassOptions)
         return
     end
 
-    local RepoURL = PrepassOptions.UssiRepoURL or "https://raw.githubusercontent.com/luau/UniversalSynSaveInstance/main/"
-    local ScriptName = PrepassOptions.UssiScript or "saveinstance"
+    local RepoURL = PrepassOptions.UssiRepoURL
+    local ScriptName = PrepassOptions.UssiScript
     local synsaveinstance = loadstring(game:HttpGet(RepoURL .. ScriptName .. ".lua", true), ScriptName)()
 
     return synsaveinstance(Options or {})
