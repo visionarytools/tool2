@@ -349,9 +349,9 @@ return function(Options, PrepassOptions)
         return
     end
 
-    local RepoURL = PrepassOptions.UssiRepoURL or "https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/"
-    local ScriptName = PrepassOptions.UssiScript or "source"
-    local synsaveinstance = loadstring(game:HttpGet(RepoURL .. ScriptName .. ".luau", true), ScriptName)()
+    local RepoURL = PrepassOptions.UssiRepoURL
+    local ScriptName = PrepassOptions.UssiScript
+    local synsaveinstance = loadstring(game:HttpGet(RepoURL .. ScriptName .. ".lua", true), ScriptName)()
 
     return synsaveinstance(Options or {})
 end
