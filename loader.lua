@@ -22,8 +22,8 @@ local PrepassOptions = {
     Verbose           = true,
     SkipPrepass       = false,
     SkipSaveInstance  = false,
-    UssiRepoURL       = "https://raw.githubusercontent.com/RiseBlox/MyHub/main/codes/",
-    UssiScript        = "SISmart",
+    UssiRepoURL       = "https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/",
+    UssiScript        = "source",
 }
 
 Prepass(Options, PrepassOptions)
