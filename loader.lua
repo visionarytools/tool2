@@ -2,13 +2,13 @@ local Prepass = loadstring(game:HttpGet("https://raw.githubusercontent.com/visio
 
 local Options = {
     ReadMe = false,
-    SafeMode = true,
+    SafeMode = false,
     BoostFPS = true,
-    ShutdownWhenDone = true,
+    ShutdownWhenDone = false,
     mode = "full",
     Decompile = true,
     DecompileTimeout = -1,
-    SaveBytecode = true,
+    SaveBytecode = false,
     DecompileIgnore = {},
     IgnoreList = {},
     NilInstances = true,
