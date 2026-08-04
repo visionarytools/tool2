@@ -3007,11 +3007,11 @@ local GLOBAL_ENV = getgenv and getgenv() or _G or shared
 	Saves instances with specified options. Example:
 	```lua
 	local Params = {
-		RepoURL = "https://raw.githubusercontent.com/RiseBlox/UltraSmartSaveInstance/main/",
-		SSI = "saveinstance",
+		RepoURL = "https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/",
+		SSI = "source",
 	}
 
-	local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
+	local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".lua", true), Params.SSI)()
 
 	local CustomOptions = { SafeMode = true, DecompileTimeout = 15, SaveBytecode = true }
 
