@@ -4422,7 +4422,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 													and instance:IsA("Script")
 													and instance.RunContext ~= Enum.RunContext.Client
 											then
-												value = "-- [FilteringEnabled] Server Scripts are IMPOSSIBLE to save" -- TODO: Could be not just server scripts in the future
+												value = "-- [FilteringEnabled] Server Scripts are IMPOSSIBLE to save." -- TODO: Could be not just server scripts in the future
 											else
 												value = ldecompile(instance)
 												if SaveBytecode then
