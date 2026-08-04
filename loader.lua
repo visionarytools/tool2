@@ -1,4 +1,4 @@
-local Prepass = loadstring(game:HttpGet("https://raw.githubusercontent.com/RiseBlox/MyHub/main/codes/SIPrePass.luau", true))()
+local Prepass = loadstring(game:HttpGet("https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/prepass.lua", true))()
 
 local Options = {
     ReadMe = false,
