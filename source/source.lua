@@ -3007,11 +3007,11 @@ local GLOBAL_ENV = getgenv and getgenv() or _G or shared
 	Saves instances with specified options. Example:
 	```lua
 	local Params = {
-		RepoURL = "https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/",
-		SSI = "source",
+		RepoURL = "https://raw.githubusercontent.com/RiseBlox/UltraSmartSaveInstance/main/",
+		SSI = "saveinstance",
 	}
 
-	local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".lua", true), Params.SSI)()
+	local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
 
 	local CustomOptions = { SafeMode = true, DecompileTimeout = 15, SaveBytecode = true }
 
@@ -3045,7 +3045,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 	local cached_physicsgrid, cached_smoothgrid -- base64-encoded terrain grid blobs
 	local savebuffer, savebuffer_size = {}, 1
 	local header =
-		'<!-- Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :) --><roblox version="4">'
+		'<roblox version="4">'
 
 	local StatusText
 
@@ -4422,7 +4422,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 													and instance:IsA("Script")
 													and instance.RunContext ~= Enum.RunContext.Client
 											then
-												value = "-- [FilteringEnabled] Server Scripts are IMPOSSIBLE to save." -- TODO: Could be not just server scripts in the future
+												value = "-- [FilteringEnabled] Server Scripts are IMPOSSIBLE to save" -- TODO: Could be not just server scripts in the future
 											else
 												value = ldecompile(instance)
 												if SaveBytecode then
@@ -4434,7 +4434,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 											end
 										end
 
-										value = "-- Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :)\n\n"
+										value = ""
 											.. (hasLinkedSource and "-- Original Source: https://assetdelivery.roblox.com/v1/asset/?" .. (LinkedSource_type or "id") .. "=" .. (LinkedSource or LinkedSource_Url) .. "\n\n" or "")
 											.. value
 									end
@@ -4620,7 +4620,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 		if OPTIONS.ReadMe then
 			save_extra(
-				"THANK YOU!",
+				"README",
 				nil,
 				nil,
 				"Script",
@@ -4629,36 +4629,63 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 						RecoveredScripts
 					) .. "\n" or "")
 					.. [[
-		Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :)
-					
-		In addition, it would mean a lot to me if you could join my Discord Server: [VS] Visionary Studios (https://discord.gg/D3GusB9qWK) (Not required, but greatly appreciated! :D)
-					
-		Please keep in mind of the following:
-					
-		1) Server Scripts, ServerScriptService, and ServerStorage are impossible to save due to FilteringEnabled.
-					
-		2) If your player cannot spawn into the game, please move the scripts in StarterPlayerScripts somewhere else. Then run "game:GetService("Players").CharacterAutoLoads = true" in the Command Bar.
-					
-		3) If the chat system does not work, please use the explorer and delete everything inside of the TextChatService/Chat service(s). 
-		OR you can run "game:GetService("Chat"):ClearAllChildren() game:GetService("TextChatService"):ClearAllChildren()" in the Command Bar.
-					
-		4) If Union and MeshPart collisions do not work, please run the script below in the Command Bar:				
-					
-		local CoreGui = game:GetService("CoreGui")
-		local Default = Enum.CollisionFidelity.Default
-					
-		for i, v in game:GetDescendants() do
-			if v:IsA("TriangleMeshPart") and not v:IsDescendantOf(CoreGui) then
-				v.CollisionFidelity = Default
+		Thank you for using UltraSmartSynSaveInstance.
+
+		If you didn't save in Binary (rbxl) - it's recommended to save the game right away to take advantage of the binary format & to preserve values of certain properties if you used IgnoreDefaultProperties setting (as they might change in the future).
+		You can do that by going to FILE -> Save to File As -> Make sure File Name ends with .rbxl -> Save
+
+		ServerStorage, ServerScriptService and Server Scripts are IMPOSSIBLE to save because of FilteringEnabled.
+
+		If your player cannot spawn into the game, please move the scripts in StarterPlayer somewhere else or delete them. Then run `game:GetService("Players").CharacterAutoLoads = true`.
+		And use "Play Here" to start game instead of "Play" to spawn your Character where your Camera currently is.
+
+		If the chat system does not work, please use the explorer and delete everything inside the TextChatService/Chat service(s). 
+		Or run `game:GetService("Chat"):ClearAllChildren() game:GetService("TextChatService"):ClearAllChildren()`
+				
+		If Union and MeshPart collisions don't work, run the script below in the Studio Command Bar:
+				
+				
+		local C = game:GetService("CoreGui")
+		local D = Enum.CollisionFidelity.Default
+				
+		for _, v in game:GetDescendants() do
+			if v:IsA("TriangleMeshPart") and not v:IsDescendantOf(C) then
+				v.CollisionFidelity = D
 			end
 		end
-					
-		print("Done!")
-					
-		5) If you cannot move your camera, please run this script "game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Fixed" in the Command Bar.
-		OR delete the camera.
-]]
-					.. "]]"
+		print("Done")
+				
+		If you can't move the Camera, run this script in the Studio Command Bar:
+			
+		workspace.CurrentCamera.CameraType = Enum.CameraType.Fixed
+		
+		Or Destroy the Camera.
+
+		This file was generated with the following settings:
+		]]
+					.. service.HttpService:JSONEncode(OPTIONS)
+					.. "\n\n\t\tElapsed time: "
+					.. os.clock() - elapse_t
+					.. " Date (UTC): "
+					.. DateTime.now():FormatUniversalTime("LL LTS", "en-gb")
+					.. " PlaceId: "
+					.. game.PlaceId
+					.. " PlaceVersion: "
+					.. game.PlaceVersion
+					.. " Client Version: "
+					.. FULL_VERSION
+					.. " Platform: "
+					.. (
+						select(
+							2,
+							pcall(function()
+								return service.UserInputService:GetPlatform().Name -- Won't work on lvl 2 execs but we can safely assume they're on PC (and likely Windows)
+							end)
+						) or "Unknown"
+					)
+					.. " Executor: "
+					.. (identify_executor and table.concat({ identify_executor() }, " ") or "Unknown")
+					.. "\n]]"
 			)
 		end
 		do
