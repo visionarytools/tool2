@@ -2,7 +2,7 @@ local Prepass = loadstring(game:HttpGet("https://raw.githubusercontent.com/visio
 
 local Options = {
     ReadMe = false,
-    SafeMode = true,
+    SafeMode = false,
     BoostFPS = true,
     ShutdownWhenDone = true,
     mode = "full",
