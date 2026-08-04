@@ -4461,8 +4461,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 						end
 
 						if tag then
-							savebuffer[savebuffer_size] =
-								"</roblox><!-- Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :) -->"
+							savebuffer[savebuffer_size] = ReturnProperty(tag, PropertyName, value)
 							savebuffer_size += 1
 						else --if __DEBUG_MODE then -- * We print this anyway because very important
 							warn("UNSUPPORTED TYPE (OPEN A GITHUB ISSUE): ", ValueType, ClassName, PropertyName)
