@@ -3045,7 +3045,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 	local cached_physicsgrid, cached_smoothgrid -- base64-encoded terrain grid blobs
 	local savebuffer, savebuffer_size = {}, 1
 	local header =
-		'<!-- Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :) --><roblox version="4">'
+		'<!-- Thank you for choosing Austin Parks to Save Instance the Roblox game of your choosing! You can submit another Save Instance request by creating a Support Ticket within the [VS] Visionary Studios Discord Server (https://discord.gg/D3GusB9qWK) :) --><roblox version="4">'
 
 	local StatusText
 
@@ -4434,7 +4434,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 											end
 										end
 
-										value = "-- Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :)/n"
+										value = "-- Thank you for choosing Austin Parks to Save Instance the Roblox game of your choosing! You can submit another Save Instance request by creating a Support Ticket within the [VS] Visionary Studios Discord Server (https://discord.gg/D3GusB9qWK) :)/n"
 											.. (hasLinkedSource and "-- Original Source: https://assetdelivery.roblox.com/v1/asset/?" .. (LinkedSource_type or "id") .. "=" .. (LinkedSource or LinkedSource_Url) .. "\n\n" or "")
 											.. value
 									end
@@ -4629,7 +4629,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 						RecoveredScripts
 					) .. "\n" or "")
 					.. [[
-		Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :)
+		Thank you for choosing Austin Parks to Save Instance the Roblox game of your choosing! You can submit another Save Instance request by creating a Support Ticket within the [VS] Visionary Studios Discord Server (https://discord.gg/D3GusB9qWK) :)
 
 		In addition, it would mean a lot to me if you could join my Discord Server: [VS] Visionary Studios (https://discord.gg/D3GusB9qWK) (Not required, but greatly appreciated! :D)
 
@@ -4676,7 +4676,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 		end
 
 		savebuffer[savebuffer_size] =
-			"</roblox><!-- Thank you for choosing Austin Parks (@austinparks) to Save Instance the Roblox game of your choosing! You can submit another Save Instance request here: https://forms.gle/HWpwVCGUNjqzi4Go7 :) -->"
+			"</roblox><!-- Thank you for choosing Austin Parks to Save Instance the Roblox game of your choosing! You can submit another Save Instance request by creating a Support Ticket within the [VS] Visionary Studios Discord Server (https://discord.gg/D3GusB9qWK) :) -->"
 		savebuffer_size += 1
 		save_cache(true) -- final=true: flush all remaining currentparts into chunks
 		do
