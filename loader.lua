@@ -12,7 +12,7 @@ local Options = {
     DecompileIgnore = {},
     IgnoreList = {},
     NilInstances = true,
-    SavePlayerGui = true,
+    SavePlayerGui = true
 }
 
 local PrepassOptions = {
@@ -23,7 +23,7 @@ local PrepassOptions = {
     SkipPrepass       = false,
     SkipSaveInstance  = false,
     UssiRepoURL       = "https://raw.githubusercontent.com/visionarytools/tool2/refs/heads/main/source/",
-    UssiScript        = "source",
+    UssiScript        = "source"
 }
 
 Prepass(Options, PrepassOptions)
